@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
 import java.util.ArrayList;
 
 public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolder>
@@ -32,6 +35,17 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolde
         ModelPahlawan Pahlawan = dataPahlawan.get(position);
         holder.tvNama.setText(Pahlawan.getNama());
         holder.tvTentang.setText(Pahlawan.getTentang());
+        Glide
+                .with(holder.itemView.getContext()).
+                load(Pahlawan.getFoto())
+                .centerCrop()
+                .into(holder.ivFoto);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     @Override
