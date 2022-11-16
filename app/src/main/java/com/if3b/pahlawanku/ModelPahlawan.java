@@ -27,7 +27,4 @@ public class ModelPahlawan
     public void setTentang(String tentang) {
         Tentang = tentang;
     }
-
-
-    }
 }

@@ -23,17 +23,17 @@ public class DataPahlawan {
                 {"Tan Malaka", "Tan Malaka atau Ibrahim gelar Datuk Sutan Malaka (lahir di Nagari Pandam Gadang, Suliki, Lima Puluh Kota, Sumatera Barat, 2 Juni 1897 – meninggal di Desa Selopanggung, Kediri, Jawa Timur, 21 Februari 1949 pada umur 51 tahun) adalah seorang pembela kemerdekaan Indonesia, tokoh Partai Komunis Indonesia, juga pendiri Partai Murba, dan merupakan salah satu Pahlawan Nasional Indonesia.", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/TanMalaka_DariPendjara_ed3.jpg/330px-TanMalaka_DariPendjara_ed3.jpg"
                 },
         };
-        public static ArrayList<ModelPahlawan> ambilDataPahlawan() {
-                ArrayList<ModelPahlawan> dataPahlawan = new ArrayList<>();
-                for (String[] varData : data) {
-                        ModelPahlawan model = new ModelPahlawan();
-                        model.setNama(varData[0]);
-                        model.setTentang(varData[1]);
-                        model.setFoto(varData[2]);
-
-                        dataPahlawan.add(model);
-                }
-
-                return dataPahlawan;
-        }
+//        public static ArrayList<ModelPahlawan> ambilDataPahlawan() {
+//                ArrayList<ModelPahlawan> dataPahlawan = new ArrayList<>();
+//                for (String[] varData : data) {
+//                        ModelPahlawan model = new ModelPahlawan();
+//                        model.setNama(varData[0]);
+//                        model.setTentang(varData[1]);
+//                        model.setFoto(varData[2]);
+//
+//                        dataPahlawan.add(model);
+//                }
+//
+//                return dataPahlawan;
+//        }
 }

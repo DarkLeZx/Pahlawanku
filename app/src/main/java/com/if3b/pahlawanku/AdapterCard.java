@@ -1,14 +1,44 @@
 package com.if3b.pahlawanku;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class AdapterCard
+import java.util.ArrayList;
+
+public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolder>
 {
+    private ArrayList<ModelPahlawan> dataPahlawan;
+
+    public AdapterCard(ArrayList<ModelPahlawan> dataPahlawan)
+    {
+        this.dataPahlawan = dataPahlawan;
+    }
+
+    @NonNull
+    @Override
+    public ClassViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View varView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent,false);
+        return new ClassViewHolder(varView);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ClassViewHolder holder, int position) {
+        ModelPahlawan Pahlawan = dataPahlawan.get(position);
+        holder.tvNama.setText(Pahlawan.getNama());
+        holder.tvTentang.setText(Pahlawan.getTentang());
+    }
+
+    @Override
+    public int getItemCount() {
+        return dataPahlawan.size();
+    }
+
     public class ClassViewHolder extends RecyclerView.ViewHolder
     {
         ImageView ivFoto;
