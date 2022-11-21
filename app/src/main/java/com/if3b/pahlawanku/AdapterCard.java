@@ -1,5 +1,7 @@
 package com.if3b.pahlawanku;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +45,19 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolde
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            String xNama, xTentang, xFoto;
+            xNama = Pahlawan.getNama();
+            xTentang = Pahlawan.getTentang();
+            xFoto = Pahlawan.getFoto();
+
+//                Log.d("Pengecekan Data", xNama + " | " + xTentang + " | " + xFoto);
+
+                Intent kirim = new Intent(holder.itemView.getContext(), DetailActivity.class);
+                kirim.putExtra("xNama", xNama);
+                kirim.putExtra("xTentang", xTentang);
+                kirim.putExtra("xFoto", xFoto);
+
+                holder.itemView.getContext().startActivity(kirim);
 
             }
         });
